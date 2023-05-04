@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Post{% endblock title %}
+
+{% block more_css %}
+<link rel="stylesheet" type="text/css" href="/static/css/new_post.css">
+{% endblock more_css %}
+
+{% block content %}
+<div class="container-md">
+    <h1>Edit Post</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Edit" class="btn btn-warning">
+    </form>
+</div>
+{% endblock content %}
